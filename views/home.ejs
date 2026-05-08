@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curio Collective | Shop Unique</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Curio Collective">
+                <span>Curio Collective</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/shop">SHOP</a></li>
+                <li><a href="/new">NEW ARRIVALS</a></li>
+                <li><a href="/bestsellers">BESTSELLERS</a></li>
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/blog">BLOG</a></li>
+                <li><a href="/contact">CONTACT</a></li>
+            </ul>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="far fa-user"></i>
+                <i class="far fa-heart"></i>
+                <i class="fas fa-shopping-bag"><span>3</span></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero" style="background-image: url('/images/hero-bg.jpg');">
+            <div class="hero-content">
+                <h1>FIND JOY IN THE UNIQUE</h1>
+                <p>Explore our collection of handpicked toys, jewelry, caps & curiosities.</p>
+                <a href="/shop" class="btn-primary">SHOP ALL COLLECTIONS</a>
+            </div>
+        </section>
+
+        <div class="content-layout">
+            <aside class="sidebar">
+                <h3>CATEGORIES</h3>
+                <p class="sub-label">EXPLORE ALL CATEGORIES</p>
+                <ul>
+                    <li><i class="fas fa-puzzle-piece"></i> Toys & Games</li>
+                    <li><i class="fas fa-gem"></i> Jewelry</li>
+                    <li><i class="fas fa-hat-cowboy"></i> Caps & Hats</li>
+                    <li><i class="fas fa-home"></i> Gifts & Home</li>
+                    <li><i class="fas fa-utensils"></i> Kitchenware</li>
+                    <li><i class="fas fa-user-tag"></i> Personal Accessories</li>
+                    <li><i class="fas fa-pen-nib"></i> Stationery</li>
+                    <li><i class="fas fa-book"></i> Books</li>
+                </ul>
+            </aside>
+
+            <section class="product-feed">
+                <div class="section-header">
+                    <h2>NEW ARRIVALS</h2>
+                </div>
+                
+                <div class="grid">
+                    <% products.forEach(product => { %>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="<%= product.image %>" alt="<%= product.name %>">
+                            </div>
+                            <div class="product-info">
+                                <h4><%= product.name %></h4>
+                                <p class="price">$<%= product.price %></p>
+                                <div class="rating">
+                                    <% for(let i=0; i<5; i++) { %>
+                                        <span class="star">★</span>
+                                    <% } %>
+                                </div>
+                                <button class="btn-add">ADD TO CART</button>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>Explore</h4>
+                <a href="#">About</a>
+            </div>
+            <div>
+                <h4>Account</h4>
+                <a href="#">Account</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="#">Contact</a>
+            </div>
+            <div class="newsletter">
+                <h4>Newsletter Sign-up</h4>
+                <p>Join our Collective! 15% off first order</p>
+                <input type="email" placeholder="Your email">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
