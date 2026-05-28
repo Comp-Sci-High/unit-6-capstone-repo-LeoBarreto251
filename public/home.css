@@ -1,0 +1,207 @@
+/* Gemini Generated Code */
+.product-card h3 {
+    font-size: 14px;
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+.product-card .category {
+    font-size: 11px;
+    color: #888;
+    margin: 2px 0;
+}
+
+.product-card .price {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.product-image {
+    background-color: #f2f2f2; /* Gray placeholder if image fails */
+    object-fit: cover;
+}
+
+/* Home page*/
+/* home.css */
+
+:root {
+    --bg-color: #fdfcfb;
+    --card-bg: #ffffff;
+    --accent-tan: #e5e0d8;
+    --text-main: #333333;
+    --text-muted: #888888;
+    --border-color: #eeeeee;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: #fff;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #444;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    background: var(--accent-tan);
+    height: 350px;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 400px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.btn-primary {
+    background: #fff;
+    border: 1px solid #333;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+/* Layout Container */
+.main-layout {
+    display: flex;
+    padding: 0 5%;
+    gap: 50px;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.sidebar h3 {
+    font-size: 0.9rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+    color: #555;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    color: #000;
+}
+
+/* Product Grid */
+.product-section {
+    flex-grow: 1;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 30px;
+    padding-bottom: 100px;
+}
+
+/* Product Cards */
+.product-card {
+    background: transparent;
+    text-align: left;
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Keeps images perfectly square */
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    background-color: #f2f2f2; /* Fallback for missing images */
+}
+
+.product-card h3 {
+    font-size: 0.95rem;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.category-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.price-label {
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+/* Button Styling */
+.add-to-cart {
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.add-to-cart:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}

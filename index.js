@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 
 const ItemSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
+    products: { type: String, required: true },
     category: { type: String },
     image: { type: String },
     price: {type: Number},
@@ -27,14 +27,31 @@ const Item = mongoose.model("Item", ItemSchema, "Items");
 
 
 app.get("/", async (req, res) => {
-  const items = await Item.find({}).sort({ createdAt: -1 });
-  res.render("home.ejs", {  });
+    try {
+        const items = await Item.find();
+        res.render("home", { items });
+    } catch (error) {
+        res.status(500).send("Error fetching items");
+    }
+});
+
+app.get('/shop', (req, res) => {
+    const data = {
+        categories: ['Toys & Games', 'Jewelry', 'Caps & Hats', 'Gifts & Home', 'Kitchenware', 'Stationery'],
+        items: [
+            { name: 'Leather Wallet', price: 32, image: '/path/to/wallet.jpg' },
+            { name: 'Ceramic Mug', price: 22, image: '/path/to/mug.jpg' },
+            { name: 'Handmade Toy Car', price: 18, image: '/path/to/car.jpg' },
+            { name: 'Scented Candle', price: 22, image: '/path/to/candle.jpg' },
+            // Add more items here...
+        ]
+    };
+    res.render('shopping.ejs', data);
 });
 
 
-
 async function startServer() {
-    await mongoose.connect("mongodb+srv://SE12:CSH2026@cluster0.ytvmkmf.mongodb.net/?appName=Cluster0")
+    await mongoose.connect("mongodb+srv://SE12:CSH2026@cluster0.tf3jmpg.mongodb.net/Leandro?appName=Cluster0")
     app.listen(3000, () => {
         console.log("Server is running")
     })
